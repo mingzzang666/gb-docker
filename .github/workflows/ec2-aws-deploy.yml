@@ -46,7 +46,7 @@ jobs:
             --build-arg KAKAO_CLIENT_SECRET=${{ secrets.KAKAO_CLIENT_SECRET }} \
             --build-arg NAVER_CLIENT_ID=${{ secrets.NAVER_CLIENT_ID }} \
             --build-arg NAVER_CLIENT_SECRET=${{ secrets.NAVER_CLIENT_SECRET }} \
-            --build-arg MAIL_USERNAME=${{ secrets.MAIL_USERNAME }} \
+            --build-arg MAIL_USER_NAME=${{ secrets.MAIL_USER_NAME }} \
             --build-arg MAIL_PASSWORD="${{ secrets.MAIL_PASSWORD }}" \
             --build-arg SMS_ACCESS=${{ secrets.SMS_ACCESS }} \
             --build-arg SMS_SECRET=${{ secrets.SMS_SECRET }} \
