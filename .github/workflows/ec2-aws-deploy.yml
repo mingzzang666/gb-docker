@@ -65,7 +65,7 @@ jobs:
             -e NAVER_CLIENT_ID=${{ secrets.NAVER_CLIENT_ID }} \
             -e NAVER_CLIENT_SECRET=${{ secrets.NAVER_CLIENT_SECRET }} \
             -e JWT_SECRET=${{ secrets.JWT_SECRET }} \
-            -e MAIL_USER_NAME=${{ secrets.MAIL_USERNAME }} \
+            -e MAIL_USER_NAME=${{ secrets.MAIL_USER_NAME }} \
             -e MAIL_PASSWORD="${{ secrets.MAIL_PASSWORD }}" \
             -e SMS_ACCESS=${{ secrets.SMS_ACCESS }} \
             -e SMS_SECRET=${{ secrets.SMS_SECRET }} \
