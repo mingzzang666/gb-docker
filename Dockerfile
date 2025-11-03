@@ -8,6 +8,18 @@ ENV EC2_HOST=${EC2_HOST}
 ARG EC2_DATABASE_HOST
 ENV EC2_DATABASE_HOST=${EC2_DATABASE_HOST}
 
+ARG MAIL_USER_NAME
+ENV MAIL_USER_NAME=${MAIL_USER_NAME}
+
+ARG MAIL_PASSWORD
+ENV MAIL_PASSWORD=${MAIL_PASSWORD}
+
+ARG SMS_ACCESS
+ENV SMS_ACCESS=${SMS_ACCESS}
+
+ARG SMS_SECRET
+ENV SMS_SECRET=${SMS_SECRET}
+
 ARG JWT_SECRET
 ENV JWT_SECRET=${JWT_SECRET}
 
@@ -36,7 +48,7 @@ ARG NAVER_CLIENT_SECRET
 ENV NAVER_CLIENT_SECRET=${NAVER_CLIENT_SECRET}
 
 # 작업 디렉토리 설정
-WORKDIR /app
+WORKDIR /crew-station
 
 # Gradle wrapper 및 프로젝트 파일 복사
 COPY . .
@@ -51,10 +63,10 @@ FROM eclipse-temurin:17-jre
 ENV TZ=Asia/Seoul
 
 # JAR 복사 (위 단계에서 생성된 JAR)
-COPY --from=build /app/build/libs/app-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /crew-station/build/libs/crew-station-0.0.1-SNAPSHOT.jar crew-station.jar
 
 # 포트 오픈 (Spring Boot 기본 포트)
 EXPOSE 10000
 
 # 실행 명령
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "crew-station.jar"]
