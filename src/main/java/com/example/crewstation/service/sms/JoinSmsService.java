@@ -20,9 +20,9 @@ import java.util.Random;
 public class JoinSmsService {
 
     //        각자 api key 입력
-    @Value("${sms.api.access}")
+    @Value("${SMS_ACCESS_KEY}")
     private String apiKey;
-    @Value("${sms.api.secret}")
+    @Value("${SMS_SECRET_KEY}")
     private String apiSecret;
 
     private DefaultMessageService messageService;
